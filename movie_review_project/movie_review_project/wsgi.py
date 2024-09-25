@@ -24,15 +24,15 @@ import sys
 from django.core.wsgi import get_wsgi_application
 
 # Add your project directory to the sys.path
-project_home = '/home/your_username/yourprojectdirectory'
+project_home = '/home/janassalem/Movie_Recommendations'
 if project_home not in sys.path:
     sys.path = [project_home] + sys.path
 
 # Set environment variable for Django settings module
-os.environ['DJANGO_SETTINGS_MODULE'] = 'yourprojectname.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'Movie_Recommendations.settings'
 
 # Activate virtual environment
-activate_this = '/home/your_username/yourprojectdirectory/venv/bin/activate_this.py'
+activate_this = '/home/janassalem/Movie_Recommendations/venv/bin/activate_this.py'
 with open(activate_this) as file_:
     exec(file_.read(), dict(__file__=activate_this))
 
