@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'janassalem$reviews',
         'USER': 'janamohamed248@gmail.com',
         'PASSWORD': '8smcAbh@U6VFC3T',
-        'HOST': 'your_pythonanywhere_mysql_host',
+        'HOST': 'janassalem_pythonanywhere_mysql_host',
     }
 }
 
