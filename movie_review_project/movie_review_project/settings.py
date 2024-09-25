@@ -75,12 +75,17 @@ WSGI_APPLICATION = 'movie_review_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'janassalem$reviews',
+        'USER': 'janamohamed248@gmail.com',
+        'PASSWORD': '8smcAbh@U6VFC3T',
+        'HOST': 'your_pythonanywhere_mysql_host',
     }
 }
+
 
 
 # Password validation
