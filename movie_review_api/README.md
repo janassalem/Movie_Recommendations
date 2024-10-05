@@ -73,7 +73,7 @@ A RESTful API for managing movie reviews, allowing users to create, read, update
 ## Acknowledgments
 - [Django REST Framework](https://www.django-rest-framework.org/)
 - [Django Filters](https://django-filter.readthedocs.io/en/stable/)
-```
+
 
 ### Notes:
 1. **Replace placeholders** like `Movie_Recommendations` with the actual name of your repository.
