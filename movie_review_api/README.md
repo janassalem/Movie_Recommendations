@@ -1,4 +1,3 @@
-```markdown
 # Movie Review API
 
 ## Description
