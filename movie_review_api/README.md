@@ -79,7 +79,6 @@ A RESTful API for managing movie reviews, allowing users to create, read, update
 1. **Replace placeholders** like `Movie_Recommendations` with the actual name of your repository.
 2. Customize sections as necessary to match your project specifics.
 3. Ensure to add a `requirements.txt` file in your project root with all dependencies listed for installation. You can create this file by running:
-   ```bash
+   bash
    pip freeze > requirements.txt
-   ``` 
 
