@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Movie Reviews</h1>
+<h1>Welcome to Movie Reviews!</h1>
+
+<!-- Search form -->
+<form method="GET" action="{% url 'home' %}" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="search" id="search" class="form-control" placeholder="Enter movie title" aria-label="Search for a movie" value="{{ request.GET.search }}" required>
+        <button class="btn btn-outline-secondary" type="submit">
+            <i class="fas fa-search"></i> <!-- FontAwesome search icon -->
+        </button>
+    </div>
+</form>
+
 
 <!-- Check if there are any reviews -->
 {% if reviews %}
@@ -12,6 +23,11 @@
                 <p><strong>Rating:</strong> {{ review.rating }} / 5</p>
                 <p>{{ review.review_content }}</p>
                 <p><small>Reviewed by: {{ review.user.username }} on {{ review.created_at }}</small></p>
+
+                <!-- Show "Edit" button if the review belongs to the logged-in user -->
+                {% if user.is_authenticated and review.user == user %}
+                    <a href="{% url 'review-detail' review.pk %}" class="btn btn-primary">Edit</a>
+                {% endif %}
             </li>
         {% endfor %}
     </ul>

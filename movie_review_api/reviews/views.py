@@ -14,6 +14,7 @@ from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from rest_framework.generics import RetrieveUpdateDestroyAPIView
+from .forms import UserRegistrationForm
 
 # Custom pagination class for reviews
 class ReviewPagination(PageNumberPagination):
@@ -91,8 +92,16 @@ class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
 def home(request):
+    search_query = request.GET.get('search', '')
+    if search_query:
+        reviews = Review.objects.filter(movie_title__icontains=search_query)
+    else:
+        reviews = Review.objects.all()
+    
+    return render(request, 'home.html', {'reviews': reviews})
     reviews = Review.objects.all()
     return render(request, 'home.html', {'reviews': reviews})
+
 
 def user_login(request):
     if request.method == 'POST':
@@ -141,6 +150,9 @@ def register(request):
     return render(request, 'register.html', {'form': form})
 
 
+
+
+
 class ReviewDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
@@ -149,3 +161,7 @@ class ReviewDetailView(RetrieveUpdateDestroyAPIView):
         # Get the review or return 404 if not found
         review = get_object_or_404(Review, pk=self.kwargs.get('pk'))
         return review
+
+
+
+

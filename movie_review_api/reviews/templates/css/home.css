@@ -1,0 +1,18 @@
+.input-group {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.input-group input {
+    border-radius: 5px 0 0 5px;
+}
+
+.input-group button {
+    border-radius: 0 5px 5px 0;
+}
+
+.input-group button:hover {
+    background-color: #007bff; /* Change to your desired hover color */
+    color: white;
+    transition: background-color 0.3s ease;
+}
