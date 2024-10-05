@@ -57,7 +57,7 @@ ROOT_URLCONF = 'movie_review_api.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'reviews', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,3 +135,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ]
 }
+
+LOGIN_URL = 'login'  # Redirect here if not logged in
+LOGIN_REDIRECT_URL = 'home'  # Redirect here after successful login
+LOGOUT_REDIRECT_URL = 'login'  # Redirect here after logging out
