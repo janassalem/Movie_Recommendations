@@ -139,3 +139,4 @@ REST_FRAMEWORK = {
 LOGIN_URL = 'login'  # Redirect here if not logged in
 LOGIN_REDIRECT_URL = 'home'  # Redirect here after successful login
 LOGOUT_REDIRECT_URL = 'login'  # Redirect here after logging out
+CSRF_COOKIE_SECURE = False
